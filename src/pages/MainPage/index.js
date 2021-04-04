@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
@@ -6,8 +6,6 @@ import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 
 import {
-  GiForest,
-  GiGoldMine,
   GiMetalBar,
   GiMinerals,
   GiMineWagon,
@@ -29,31 +27,77 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const MainPage = () => {
-  const [resources, setResources] = useState([
-    { id: 0, name: 'Wood', value: 0, icon: <GiWoodPile color='#5d2906' /> },
-    { id: 1, name: 'Stone', value: 0, icon: <GiStonePile color='#888C8D' /> },
-    {
-      id: 2,
-      name: 'Metal ore',
-      value: 0,
-      icon: <GiMineWagon color='#474f52' />,
-    },
-    {
-      id: 3,
-      name: 'Metal ingot',
-      value: 0,
-      icon: <GiMetalBar color='#C0C2C4' />,
-    },
-    {
-      id: 4,
-      name: 'Shiny stone',
-      value: 0,
-      icon: <GiMinerals color='#8B7CDB' />,
-    },
-  ]);
+const useInterval = (callback, delay) => {
+  const savedCallback = useRef();
 
+  // Remember the latest callback.
+  useEffect(() => {
+    savedCallback.current = callback;
+  }, [callback]);
+
+  // Set up the interval.
+  useEffect(() => {
+    let id = setInterval(() => {
+      savedCallback.current();
+    }, delay);
+
+    return () => clearInterval(id);
+  }, [delay]);
+};
+
+const MainPage = () => {
   const classes = useStyles();
+
+  const [woodResources, setWoodResources] = useState({
+    id: 0,
+    name: 'Wood',
+    value: 0,
+    icon: <GiWoodPile color='#5d2906' />,
+  });
+
+  const [stoneResources, setStoneResources] = useState({
+    id: 1,
+    name: 'Stone',
+    value: 0,
+    icon: <GiStonePile color='#888C8D' />,
+  });
+
+  const [metalOreResources, setMetalOreResources] = useState({
+    id: 2,
+    name: 'Metal ore',
+    value: 0,
+    icon: <GiMineWagon color='#474f52' />,
+  });
+
+  const [metalIngotResources, setMetalIngotResources] = useState({
+    id: 3,
+    name: 'Metal ingot',
+    value: 0,
+    icon: <GiMetalBar color='#C0C2C4' />,
+  });
+
+  const [shinyStoneResources, setShinyStoneResources] = useState({
+    id: 4,
+    name: 'Shiny stone',
+    value: 0,
+    icon: <GiMinerals color='#8B7CDB' />,
+  });
+
+  const resources = [
+    woodResources,
+    stoneResources,
+    metalOreResources,
+    metalIngotResources,
+    shinyStoneResources,
+  ];
+
+  const onTreeClick = () => {
+    setWoodResources({ ...woodResources, value: woodResources.value + 0.1 });
+  };
+
+  // useInterval(() => {
+  //   setWoodResources({ ...woodResources, value: woodResources.value + 333 });
+  // }, 100);
 
   return (
     <div className={classes.root}>
@@ -66,7 +110,7 @@ const MainPage = () => {
       </Grid>
       <Grid container spacing={3}>
         <Grid item xs>
-          <LeftActionPanel />
+          <LeftActionPanel onTreeClick={onTreeClick} />
         </Grid>
         <Grid item xs={6}>
           <Paper className={classes.paper}>xs=6</Paper>
