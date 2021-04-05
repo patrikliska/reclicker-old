@@ -15,6 +15,7 @@ import {
 
 import ResourcesBar from '../../components/ResourcesBar';
 import LeftActionPanel from '../../components/LeftActionPanel';
+import MiddleActionPanel from '../../components/MiddleActionPanel';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -92,7 +93,8 @@ const MainPage = () => {
   ];
 
   const onTreeClick = () => {
-    setWoodResources({ ...woodResources, value: woodResources.value + 0.1 });
+    if (Math.random() < 0.2)
+      setWoodResources({ ...woodResources, value: woodResources.value + 0.1 });
   };
 
   // useInterval(() => {
@@ -113,7 +115,7 @@ const MainPage = () => {
           <LeftActionPanel onTreeClick={onTreeClick} />
         </Grid>
         <Grid item xs={6}>
-          <Paper className={classes.paper}>xs=6</Paper>
+          <MiddleActionPanel />
         </Grid>
         <Grid item xs>
           <Paper className={classes.paper}>xs</Paper>
