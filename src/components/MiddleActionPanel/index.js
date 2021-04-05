@@ -23,11 +23,11 @@ const MiddleActionPanel = () => {
     <Paper className={classes.paper}>
       <Typography
         variant='h4'
-        style={{ textAlign: 'center', marginBottom: 10 }}
+        style={{ textAlign: 'center', fontWeight: 500, marginBottom: 5 }}
       >
         Town
       </Typography>
-      <Grid container spacing={3}>
+      <Grid container spacing={1}>
         <Grid item xs={12}>
           <Paper className={classes.paper}>xs=12</Paper>
         </Grid>

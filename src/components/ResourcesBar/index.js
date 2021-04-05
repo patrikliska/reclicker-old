@@ -68,8 +68,8 @@ const ResourcesBar = ({ resources }) => {
         </Avatar>
       </ListItemAvatar>
       <ListItemText
-        primary={addSuffixToNumber(resource.value)}
-        secondary={resource.name}
+        primary={addSuffixToNumber(resource?.value)}
+        secondary={resource?.title}
       />
     </ListItem>
   ));
