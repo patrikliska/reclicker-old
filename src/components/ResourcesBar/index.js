@@ -64,7 +64,7 @@ const ResourcesBar = ({ resources }) => {
     <ListItem className={classes.resourcesContainer}>
       <ListItemAvatar>
         <Avatar className={classes.resourcesIconContainer}>
-          {resource.icon || <GiBarrier color='#2C377C' />}
+          {resource?.icon || <GiBarrier color='#2C377C' />}
         </Avatar>
       </ListItemAvatar>
       <ListItemText
