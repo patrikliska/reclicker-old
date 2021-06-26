@@ -1,0 +1,121 @@
+[
+  {
+    "category": "Wood upgrades",
+    "data": [
+      {
+        "title": "Gloves",
+        "icon": "GiGloves",
+        "description": "Description",
+        "color": "#624a2e",
+        "chanceIncrease": 0.05,
+        "resourcesIncrease": 0.03
+      },
+      {
+        "title": "Gloves",
+        "icon": "GiMetalBar",
+        "description": "Description",
+        "value": 0.2
+      },
+      {
+        "title": "Gloves",
+        "icon": "GiMetalBar",
+        "description": "Description",
+        "value": 0.2
+      },
+      {
+        "title": "Gloves",
+        "icon": "GiMetalBar",
+        "description": "Description",
+        "value": 0.2
+      },
+      {
+        "title": "Gloves",
+        "icon": "GiMetalBar",
+        "description": "Description",
+        "value": 0.2
+      },
+      {
+        "title": "Gloves",
+        "icon": "GiMetalBar",
+        "description": "Description",
+        "value": 0.2
+      }
+    ]
+  },
+  {
+    "category": "Stone upgrades",
+    "data": [
+      {
+        "title": "Gloves",
+        "icon": "GiMetalBar",
+        "description": "Description",
+        "value": 0.2
+      },
+      {
+        "title": "Gloves",
+        "icon": "GiMetalBar",
+        "description": "Description",
+        "value": 0.2
+      },
+      {
+        "title": "Gloves",
+        "icon": "GiMetalBar",
+        "description": "Description",
+        "value": 0.2
+      }
+    ]
+  },
+  {
+    "category": "Metal upgrades",
+    "data": [
+      {
+        "title": "Gloves",
+        "icon": "GiMetalBar",
+        "description": "Description",
+        "value": 0.2
+      },
+      {
+        "title": "Gloves",
+        "icon": "GiMetalBar",
+        "description": "Description",
+        "value": 0.2
+      },
+      {
+        "title": "Gloves",
+        "icon": "GiMetalBar",
+        "description": "Description",
+        "value": 0.2
+      },
+      {
+        "title": "Gloves",
+        "icon": "GiMetalBar",
+        "description": "Description",
+        "value": 0.2
+      },
+      {
+        "title": "Gloves",
+        "icon": "GiMetalBar",
+        "description": "Description",
+        "value": 0.2
+      },
+      {
+        "title": "Gloves",
+        "icon": "GiMetalBar",
+        "description": "Description",
+        "value": 0.2
+      },
+      {
+        "title": "Gloves",
+        "icon": "GiMetalBar",
+        "description": "Description",
+        "value": 0.2
+      },
+      {
+        "title": "Gloves",
+        "icon": "GiMetalBar",
+        "description": "Description",
+        "value": 0.2
+      }
+    ]
+  }
+]

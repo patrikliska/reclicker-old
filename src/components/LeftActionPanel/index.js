@@ -32,51 +32,69 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const LeftActionPanel = ({ onTreeClick }) => {
+const LeftActionPanel = ({ onTreeClick, resources }) => {
   const classes = useStyles();
+
+  const getIcon = (iconName) => {
+    const IconButtonContainer = ({ children, onClick }) => (
+      <IconButton
+        className={classes.miningIconContainer}
+        onClick={() => onClick()}
+        disableFocusRipple
+        disableRipple
+      >
+        {children}
+      </IconButton>
+    );
+
+    switch (iconName.toLowerCase()) {
+      case 'wood':
+        return (
+          <IconButtonContainer onClick={onTreeClick}>
+            <GiPineTree
+              size={iconSize}
+              color='#708238'
+              className={classes.miningIcon}
+            />
+          </IconButtonContainer>
+        );
+      default:
+        return (
+          <IconButtonContainer>
+            <GiGoldMine size={iconSize} className={classes.miningIcon} />
+          </IconButtonContainer>
+        );
+    }
+  };
 
   return (
     <Paper className={classes.paper}>
       <Typography
         variant='h4'
-        style={{ textAlign: 'center', marginBottom: 10 }}
+        style={{ textAlign: 'center', fontWeight: 500, marginBottom: 5 }}
       >
         Mines
       </Typography>
-      <Grid container spacing={3}>
-        <Grid item xs={12}>
-          <Paper className={classes.paper}>
-            <IconButton
-              className={classes.miningIconContainer}
-              onClick={() => onTreeClick()}
-              disableFocusRipple
-              disableRipple
-            >
-              <GiPineTree
-                size={iconSize}
-                color='#708238'
-                className={classes.miningIcon}
-              />
-            </IconButton>
-          </Paper>
-        </Grid>
-        <Grid item xs={12}>
-          <Paper className={classes.paper}>
-            <GiGoldMine size={iconSize} />
-          </Paper>
-        </Grid>
-        <Grid item xs={12}>
-          <Paper className={classes.paper}>xs=12</Paper>
-        </Grid>
-        <Grid item xs={12}>
-          <Paper className={classes.paper}>xs=12</Paper>
-        </Grid>
-        <Grid item xs={12}>
-          <Paper className={classes.paper}>xs=12</Paper>
-        </Grid>
-        <Grid item xs={12}>
-          <Paper className={classes.paper}>xs=12</Paper>
-        </Grid>
+      <Grid container spacing={1}>
+        {resources?.map((resource) => (
+          <Grid item xs={12}>
+            <Paper className={classes.paper} style={{ display: 'flex' }}>
+              {getIcon(resource?.name)}
+              <Typography
+                variant='subtitle2'
+                style={{
+                  opacity: 0.35,
+                  textAlign: 'right',
+                  width: '100%',
+                  display: 'grid',
+                  alignItems: 'end',
+                }}
+              >
+                Chance to succeed: {resource?.clickChance * 100}%
+              </Typography>
+            </Paper>
+          </Grid>
+        ))}
       </Grid>
     </Paper>
   );
