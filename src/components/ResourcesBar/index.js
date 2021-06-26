@@ -1,22 +1,22 @@
-import React from 'react';
+import React from "react";
 
-import Avatar from '@material-ui/core/Avatar';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import ListItemText from '@material-ui/core/ListItemText';
+import Avatar from "@material-ui/core/Avatar";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemAvatar from "@material-ui/core/ListItemAvatar";
+import ListItemText from "@material-ui/core/ListItemText";
 
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from "@material-ui/core/styles";
 
-import { GiBarrier } from 'react-icons/gi';
+import * as Icons from "react-icons/gi";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   resourcesContainer: {
     width: 200,
-    display: 'inline-flex',
+    display: "inline-flex",
   },
   resourcesIconContainer: {
-    backgroundColor: '#ffffff',
-    boxShadow: '0px 0px 5px 0px rgba(0,0,0,0.15)',
+    backgroundColor: "#ffffff",
+    boxShadow: "0px 0px 5px 0px rgba(0,0,0,0.15)",
   },
 }));
 
@@ -26,15 +26,15 @@ const ResourcesBar = ({ resources }) => {
   const addSuffixToNumber = (value) => {
     let newValue = value
       .toFixed(2)
-      .replace(/\.?0+$/, '')
+      .replace(/\.?0+$/, "")
       .toString()
-      .replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+      .replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 
     if (value >= 1000000) {
-      const suffixes = ['', 'k', 'M.', 'B.', 'T.'];
-      const suffixNum = Math.floor(('' + value).length / 3);
+      const suffixes = ["", "k", "M.", "B.", "T."];
+      const suffixNum = Math.floor(("" + value).length / 3);
 
-      let shortValue = '';
+      let shortValue = "";
 
       for (let precision = 2; precision >= 1; precision--) {
         shortValue = parseFloat(
@@ -44,9 +44,9 @@ const ResourcesBar = ({ resources }) => {
           ).toPrecision(precision)
         );
 
-        const dotLessShortValue = (shortValue + '').replace(
+        const dotLessShortValue = (shortValue + "").replace(
           /[^a-zA-Z 0-9]+/g,
-          ''
+          ""
         );
 
         if (dotLessShortValue.length <= 2) break;
@@ -60,11 +60,17 @@ const ResourcesBar = ({ resources }) => {
     return newValue;
   };
 
+  const getIcon = (resource) => {
+    const Icon = Icons[resource?.overviewIcon?.name || "GiBarrier"];
+
+    return <Icon color={resource?.overviewIcon?.color || "#000000"}></Icon>;
+  };
+
   return resources?.map((resource) => (
     <ListItem className={classes.resourcesContainer}>
       <ListItemAvatar>
         <Avatar className={classes.resourcesIconContainer}>
-          {resource?.icon || <GiBarrier color='#2C377C' />}
+          {getIcon(resource)}
         </Avatar>
       </ListItemAvatar>
       <ListItemText

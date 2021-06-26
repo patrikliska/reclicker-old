@@ -6,8 +6,6 @@ import Typography from "@material-ui/core/Typography";
 
 import { makeStyles } from "@material-ui/core/styles";
 
-import { GiPineTree, GiGoldMine } from "react-icons/gi";
-
 const useStyles = makeStyles((theme) => ({
   paper: {
     padding: theme.spacing(2),
