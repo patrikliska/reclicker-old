@@ -1,27 +1,28 @@
-import React from 'react';
+import React from "react";
 
-import Divider from '@material-ui/core/Divider';
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
+import Divider from "@material-ui/core/Divider";
+import Grid from "@material-ui/core/Grid";
+import Paper from "@material-ui/core/Paper";
+import Typography from "@material-ui/core/Typography";
 
-import { GiArrowCluster } from 'react-icons/gi';
+import { GiArrowCluster } from "react-icons/gi";
 
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from "@material-ui/core/styles";
 
-import Upgrade from './Upgrade';
+import Upgrade from "./Upgrade";
 
-import upgrades from './upgrades.json';
+import upgrades from "./upgrades.json";
 
 const useStyles = makeStyles((theme) => ({
   paperContainer: {
     padding: theme.spacing(2),
-    textAlign: 'left',
+    textAlign: "left",
     color: theme.palette.text.secondary,
+    height: "100%",
   },
   paper: {
     padding: theme.spacing(2),
-    textAlign: 'center',
+    textAlign: "center",
     color: theme.palette.text.secondary,
   },
 }));
@@ -32,8 +33,8 @@ const RightActionPanel = () => {
   return (
     <Paper className={classes.paperContainer}>
       <Typography
-        variant='h4'
-        style={{ textAlign: 'center', fontWeight: 500, marginBottom: 5 }}
+        variant="h4"
+        style={{ textAlign: "center", fontWeight: 500, marginBottom: 5 }}
       >
         Upgrades
         <Divider style={{ marginTop: 10 }} />
@@ -41,10 +42,10 @@ const RightActionPanel = () => {
       <Grid container spacing={2}>
         {upgrades.map((upgrade) => (
           <>
-            <Grid item xs={12} style={{ paddingBottom: 0 }} alignItems='center'>
+            <Grid item xs={12} style={{ paddingBottom: 0 }} alignItems="center">
               <Typography
-                variant='h6'
-                style={{ textAlign: 'center', fontWeight: 300 }}
+                variant="h6"
+                style={{ textAlign: "center", fontWeight: 300 }}
               >
                 {upgrade?.category}
               </Typography>
@@ -53,7 +54,7 @@ const RightActionPanel = () => {
               <Grid item xs={3}>
                 <Paper
                   className={classes.paper}
-                  style={{ position: 'relative' }}
+                  style={{ position: "relative" }}
                 >
                   {/* <GiArrowCluster
                     style={{
@@ -65,14 +66,14 @@ const RightActionPanel = () => {
                     }}
                   /> */}
                   <Typography
-                    variant='subtitle1'
+                    variant="subtitle1"
                     style={{
-                      position: 'absolute',
+                      position: "absolute",
                       bottom: 5,
                       right: 7,
-                      textAlign: 'left',
+                      textAlign: "left",
                       fontSize: 12,
-                      lineHeight: 'unset',
+                      lineHeight: "unset",
                     }}
                   >
                     0/10
