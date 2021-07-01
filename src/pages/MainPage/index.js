@@ -87,10 +87,12 @@ const MainPage = () => {
 
   const [shinyStoneResources, setShinyStoneResources] = useState({
     id: 4,
-    name: "shiny-stone",
+    clickChance: 0.00005,
+    overviewIcon: { name: "GiMinerals", color: "#5d2906" },
+    mineIcon: { name: "GiMinerals", color: "#708238" },
+    idleChance: 0.1,
     title: "Shiny stone",
     value: 0,
-    icon: <GiMinerals color="#8B7CDB" />,
   });
 
   const resources = [
