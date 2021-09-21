@@ -1,7 +1,8 @@
+import React from 'react';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 
-import Header from './components/Header';
-import MainPage from './pages/MainPage';
+import Header from '../components/Header';
+import MainPage from '../pages/MainPage';
 
 const App = () => {
   const theme = createMuiTheme({
@@ -25,7 +26,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <Header />
-      <div className='innerContainer' style={{ padding: 20 }}>
+      <div className="innerContainer" style={{ padding: 20 }}>
         <MainPage />
       </div>
     </ThemeProvider>

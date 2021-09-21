@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "checkJs": false,
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "lib": ["es6", "dom", "ES2018", "esnext"],
+    "moduleResolution": "node",
+    "noEmit": true,
+    "strict": true,
+    "target": "esnext",
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "noImplicitAny": false,
+  },
+  "exclude": ["node_modules", "babel.config.js", "metro.config.js", "setupTests.js"],
+  "include": ["**/*.ts", "**/*.tsx", "**/*.d.ts"]
+}

@@ -1,0 +1,113 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "node": true,
+    "browser": true,
+    "es6": true,
+    "jest": true,
+    "mocha": true
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+  "plugins": ["jest", "react-hooks", "prettier", "@typescript-eslint"],
+  "extends": ["plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"],
+  "rules": {
+    "arrow-body-style": ["warn", "as-needed"],
+    "camelcase": "off",
+    "class-methods-use-this": "off",
+    "max-statements": ["warn", 30],
+    "new-cap": ["error", { "capIsNew": false }],
+    "no-duplicate-imports": "off",
+    "no-param-reassign": ["error", { "ignorePropertyModificationsFor": ["el", "ref", "event"] }],
+    "no-plusplus": "off",
+    "global-require": "off",
+    "no-shadow": "off",
+    "no-use-before-define": "off",
+    "react/jsx-filename-extension": ["error", { "extensions": [".js", ".tsx"] }],
+    "react/jsx-indent-props": ["error", 2],
+    "react/require-extension": "off",
+    "react/prop-types": ["off"],
+    "react/require-default-props": ["off"],
+    "react/forbid-prop-types": ["off"],
+    "sort-imports": [
+      "error",
+      {
+        "ignoreCase": true,
+        "ignoreDeclarationSort": true,
+        "ignoreMemberSort": false,
+        "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
+      }
+    ],
+    "sort-keys": "off",
+    "newline-after-var": ["error", "always"],
+    "react/sort-comp": [
+      "error",
+      {
+        "order": [
+          "type-annotations",
+          "static-methods",
+          "lifecycle",
+          "/^on.+$/",
+          "/^(get|set)(?!(InitialState$|DefaultProps$|ChildContext$)).+$/",
+          "everything-else",
+          "/^render.+$/",
+          "render"
+        ]
+      }
+    ],
+    "object-curly-newline": [
+      "error",
+      {
+        "ObjectExpression": { "multiline": true, "consistent": true },
+        "ObjectPattern": { "multiline": true, "consistent": true }
+      }
+    ],
+    "lines-between-class-members": ["error", "always", { "exceptAfterSingleLine": true }],
+    "prettier/prettier": "error",
+    "import/prefer-default-export": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/no-duplicates": "error",
+    "import/no-named-as-default": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/no-noninteractive-tabindex": "off",
+    "jsx-a11y/media-has-caption": "off",
+    "jsx-a11y/mouse-events-have-key-events": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "react/jsx-props-no-spreading": "off",
+    "comma-dangle": ["error", "only-multiline"],
+    "react-hooks/rules-of-hooks": "error",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "id-length": [2, { "exceptions": ["t", "_", "i", "w", "h", "x", "y"] }],
+    "no-useless-constructor": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-shadow": ["error"],
+    "@typescript-eslint/no-use-before-define": ["error"]
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": { "no-undef": "off", "import/no-unresolved": "off" }
+    }
+  ]
+}
