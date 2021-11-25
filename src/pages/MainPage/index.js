@@ -1,17 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
-
+import { GiMetalBar, GiMinerals, GiMineWagon, GiStonePile, GiWoodPile } from 'react-icons/gi';
+import { Grid, Paper } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-
-import {
-  GiMetalBar,
-  GiMinerals,
-  GiMineWagon,
-  GiStonePile,
-  GiWoodPile,
-} from 'react-icons/gi';
 
 import ResourcesBar from '../../components/ResourcesBar';
 import LeftActionPanel from '../../components/LeftActionPanel';
@@ -52,7 +42,7 @@ const MainPage = () => {
 
   const [woodResources, setWoodResources] = useState({
     clickChance: 0.25,
-    icon: <GiWoodPile color='#5d2906' />,
+    icon: <GiWoodPile color="#5d2906" />,
     id: 0,
     idleChance: 0.1,
     name: 'wood',
@@ -66,7 +56,7 @@ const MainPage = () => {
     name: 'stone',
     title: 'Stone',
     value: 0,
-    icon: <GiStonePile color='#888C8D' />,
+    icon: <GiStonePile color="#888C8D" />,
   });
 
   const [metalOreResources, setMetalOreResources] = useState({
@@ -74,7 +64,7 @@ const MainPage = () => {
     name: 'metal-ore',
     title: 'Metal ore',
     value: 0,
-    icon: <GiMineWagon color='#474f52' />,
+    icon: <GiMineWagon color="#474f52" />,
   });
 
   const [metalIngotResources, setMetalIngotResources] = useState({
@@ -82,7 +72,7 @@ const MainPage = () => {
     name: 'metal-ingot',
     title: 'Metal ingot',
     value: 0,
-    icon: <GiMetalBar color='#C0C2C4' />,
+    icon: <GiMetalBar color="#C0C2C4" />,
   });
 
   const [shinyStoneResources, setShinyStoneResources] = useState({
@@ -90,7 +80,7 @@ const MainPage = () => {
     name: 'shiny-stone',
     title: 'Shiny stone',
     value: 0,
-    icon: <GiMinerals color='#8B7CDB' />,
+    icon: <GiMinerals color="#8B7CDB" />,
   });
 
   const resources = [
